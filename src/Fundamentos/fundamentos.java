@@ -1,6 +1,6 @@
 package Fundamentos;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 // import fica fora.
 // ctrl shift O organiza os imports
@@ -57,7 +57,7 @@ public class fundamentos {
 			// por exemplo: Data = Uma lista de datas é igual a [INT/INT/INT, ... ].
 			// 1 byte é igual a 8 bits com 256 possibilidades de resultado
 			// primeiro bit representa se é negativo ou positivo
-			// java analisa o tipo e tenta detectar onde ele se encaixa.
+			// java analisa o tipo e tenta detectar onde ele se encaixa Long > Int, etc.
 
 			// -----------------------------------------------------//
 			// Tipos primitivos:
@@ -153,24 +153,57 @@ public class fundamentos {
 			// System.out.printf("dia %d", 1);
 			// %n pode quebrar linha tbm
 		}
+		{
+			/*
+			 * // para receber dados do teclado usamos o Scanner para scanear // colocar
+			 * system.in para especificar a entrada como teclado no console // out
+			 * referencia todas as saidas (console, pc, impressora, ... ) Scanner entrada =
+			 * new Scanner(System.in);
+			 * 
+			 * // next para "chamar/esperar" o resultado do scan System.out.print("Nome: ");
+			 * String nickname = entrada.nextLine(); System.out.print("Sobrenome: "); String
+			 * sobrenome = entrada.nextLine(); System.out.print("idade: "); int idade =
+			 * entrada.nextInt();
+			 * 
+			 * 
+			 * System.out.printf("%n%s %s tem %d", nickname, sobrenome, idade);
+			 * 
+			 * // quando realizado a atividade, fechar o scanner para n ocupar recursos!
+			 * entrada.close();
+			 */
 
-		// para receber dados do teclado usamos o Scanner para scanear
-		// colocar system.in para especificar a entrada como teclado no console
-		// out referencia todas as saidas (console, pc, impressora, ... )
-		Scanner entrada = new Scanner(System.in);
+			// observação o nextint vai ler os inteiros,
+			// mas quando apertamos enter para ir pro proximo ele acaba deixando o \n
+			// ja que n é o numero, caso a gente dê um nextline tentando pegar o nome ele
+			// vai bugar
+			// pois o \n de antes vai ser passado pra frente, pois o nextline lê até o \n
+			// pode ser resolvido colcando um nextline após o nextint;
 
-		// next para "chamar/esperar" o resultado do scan
-		System.out.print("Nome: ");
-		String nickname = entrada.nextLine();
-		System.out.print("Sobrenome: ");
-		String sobrenome = entrada.nextLine();
-		System.out.print("idade: ");
-		int idade = entrada.nextInt();
-		
+		}
+		/*
+		 * { // falamos que nome recebeu um objeto, onde possui atributos e
+		 * comportamentos // quando colocamos '.' // -> String nome = "leco";
+		 * 
+		 * // em um lado temos os tipos primitivos e no outro os objetos
+		 * 
+		 * // para se ter o mesmo comportamento em tipos primitivos, usamos os wrappers,
+		 * // onde colocamos eles em "uma versão de objetos" Byte s = 100; Short d =
+		 * 2000; Integer h = 30000; // int Long l = 10000L; Boolean bo =
+		 * Boolean.parseBoolean("true"); Character c = 't'; Double v = 45.5D; Float f =
+		 * 35.5F; // no geral coloca em maiusculo, mas o int e o char fica por extenso
+		 * 
+		 * String teste = "10"; Integer teste2 = Integer.parseInt(teste);
+		 * 
+		 * 
+		 * System.out.println(teste2.toString());
+		 * 
+		 * }
+		 */
 
-		System.out.printf("%n%s %s tem %d", nickname, sobrenome, idade);
-		
-		// quando realizado a atividade, fechar o scanner para n ocupar recursos!
-		entrada.close();
+		{
+				int b = (int) 12; //conversão explicita ( cast ), 
+				                  // caso ultrapasse o valor maximo da variavel ele volta pro valor minimo ( possivelmente negativo )
+		}
+
 	}
 }
